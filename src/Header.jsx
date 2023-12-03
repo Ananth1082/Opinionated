@@ -1,5 +1,6 @@
 import "./App.css";
 import Logo from "./assets/icons8-logo.svg";
+import { Link } from "react-router-dom";
 export default function Header() {
   return (
     <header>
@@ -8,11 +9,10 @@ export default function Header() {
         <div id="logo-title"><h2>Opinionated</h2></div>
       </div>
       <div id="nav-container">
-        
-          <a href="#">Home</a>
-          <a href="#">Blog</a>
-          <a href="#">Explore</a>
-          <a href="#">FeedBack</a>
+        <Link to="/" >Home</Link>
+        <Link to="/Blog" >Blog</Link>
+        <Link to="/Explore" >Explore</Link>
+        <Link to="/Feedback" >Feedback</Link>
         
       </div>
       <div id="profile-info">Profile-PlaceHolder</div>
