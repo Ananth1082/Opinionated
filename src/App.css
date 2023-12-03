@@ -1,0 +1,56 @@
+header,footer {
+  background-color: var(--color-primary);
+  color: var(--background-color);
+  display: flex;
+  padding-right: 1rem;
+  align-items: center;
+  position: sticky;
+}
+footer {
+  color: var(--background-color);
+  font-weight: 700;
+  position: static;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+footer a {
+  color: var(--background-color);
+  text-decoration: none;
+}
+#footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+#logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+#profile-info {
+  margin-left: auto;
+  
+}
+#nav-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+}
+#nav-container a {
+  color: var(--background-color);
+  width:125px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  transition: all 0.5s ease;
+}
+#nav-container a:hover {
+  background-color: var(--color-secondary);
+}
