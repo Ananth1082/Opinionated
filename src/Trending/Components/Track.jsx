@@ -1,6 +1,6 @@
 import "../CSS/track.css"
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 
 export default function Track({title, data}) {
   const [page, setPage] = useState(0);
@@ -10,7 +10,7 @@ export default function Track({title, data}) {
   const dataELements = data.map((item) => {
     return (
       <img src={item.thumbnail} 
-      alt="" />
+      alt=""/>
     )
   })
   

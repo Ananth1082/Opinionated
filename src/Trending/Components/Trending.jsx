@@ -1,11 +1,12 @@
 import "../CSS/hero.css";
 import { useState } from "react";
-import GamesDB from "../../DB/GamesDB"
+import GamesDB from "../../DB/GamesDB.js"
+ 
 import DB from "../../DB/TrendingDB";
 import Track from "./Track";
 export default function Trending() {
 
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(1);
   function focus(id) {
     setActive(id);
   }
@@ -32,17 +33,17 @@ export default function Trending() {
   return (
     <>
       <div class="wrapper">
-        <h1>Trending Topics</h1>
+        <h1>Trending</h1>
         <div class="slider-container">{TrendingElements}</div>
       </div>
       <div className="wrapper">
-        <Track title="Movies"data={GamesDB}  />
+        <Track title="Free to play"data={GamesDB}  />
       </div>
       <div className="wrapper">
-        <Track title="Shows" data={GamesDB} />
+        <Track title="Action" data={GamesDB} />
       </div>
       <div className="wrapper">
-        <Track title="Games" data={GamesDB} />
+        <Track title="Open World" data={GamesDB} />
       </div>
     </>
   );

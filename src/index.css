@@ -1,11 +1,22 @@
 :root {
   font-family: 'Poppins', sans-serif;
-  --background-color:#2B2E4A;
-  --color-primary:#E84545;
-  --color-secondary:#903749;
-  --color-tertiary:#53354A;
+  --background-color: #2B2E4A;
+  --color-primary: #E84545;
+  --color-secondary: #903749;
+  --color-tertiary: #53354A;
+  --primary-color: #FFDE00;
+  --light-color: #FFFEFC;
+  --dark-color: #000000;
+  --border-width: 3px;
+  --element-border-radius: 5px;
+  --button-height: 5px;
+  --small-button-height: 2px;
+  --element-padding: 0.8em;
+  --maximum-width: 500px;
 }
-body, head{
+
+body,
+head {
   background-color: var(--background-color);
   color: var(--background-color);
   margin: 0;

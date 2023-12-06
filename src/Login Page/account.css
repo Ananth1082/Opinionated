@@ -1,0 +1,196 @@
+/* === Typography === */
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+h2, h3 {
+    font-weight: 500;
+}
+
+.app-title {
+    font-size: 2.5em;
+    text-align: center;
+}
+
+/* === Sections === */
+
+.login-section {
+    margin: 3em 0;
+}
+
+.auth-fields-and-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+/* === Structure === */
+
+.account-container {
+    max-width: var(--maximum-width);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--color-primary);
+    gap:1rem;
+    padding: 2rem;
+}
+.login-container {
+    width:70%;
+    background-color: var(--color-primary);
+    border-radius: 0 2rem 2rem 0;
+    margin:auto;
+    display: flex;
+}
+.login-image {
+    width:100%;
+    border-radius: inherit;
+    background-image: url("https://media.kasperskydaily.com/wp-content/uploads/sites/36/2022/11/02151508/true-cost-of-gaminf-featured.jpg");
+    background-size: cover;
+}
+#logged-out-view .container {
+    gap: 2em;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+/* === Common for elements === */
+
+.login-section input, .login-section button, .login-section textarea {
+    font-family: inherit;
+    padding: var(--element-padding);
+    border-radius: var(--element-border-radius);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.login-section input, .login-section button {
+    font-size: 1.1em;
+    text-align: center;
+    border: var(--border-width) solid var(--dark-color);
+}
+
+ input:focus, button:focus, textarea:focus {
+    outline: none;
+}
+
+/* === Input fields === */
+
+.login-section textarea {
+    font-size: 1em;
+    border: 0;
+    box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, .25);
+    resize: none;
+    height: 6em;
+}
+
+.login-section textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--grey-color);
+    opacity: 1; /* Firefox */
+}
+
+.login-section textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--grey-color);
+}
+
+.login-section textarea::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--grey-color);
+}
+
+.login-section input {
+    font-weight: 300;
+}
+
+input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--grey-color);
+    opacity: 1; /* Firefox */
+}
+
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--grey-color);
+}
+
+input::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--grey-color);
+}
+
+/* === Buttons === */
+
+.login-section button {
+    font-weight: 600;
+    width: 100%;
+}
+
+login-button:hover {
+    cursor: pointer;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    box-shadow: 0px var(--button-height) 0px 0px var(--dark-color);
+    position: relative;
+}
+
+.primary-btn:hover {
+    top: var(--button-height);
+    box-shadow: none;
+}
+
+.secondary-btn {
+    padding: 0.4em;
+    background-color: transparent;
+}
+
+.secondary-btn:hover {
+    color: var(--light-color);
+    background-color: var(--dark-color);
+}
+
+.provider-btn {
+    color: var(--dark-color);
+    background-color: var(--light-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    border: 0;
+    box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, .25);
+}
+
+.provider-btn:hover {
+    transition: all 0.2s ease;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, .25);
+}
+
+.google-btn-logo {
+    width: 1.375em;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 1.875em;
+}
+
+.icon-img-btn:hover {
+    filter: invert(0.5);
+}
+
+/* === IDs === */
+
+#logged-out-view {
+    display: flex;
+}
+
+#logged-in-view {
+    display: none;
+    margin: 0;
+}
