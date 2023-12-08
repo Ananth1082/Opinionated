@@ -6,9 +6,9 @@ import { getAuth,
          GoogleAuthProvider,
          signInWithPopup, 
          reload} from "firebase/auth";
-import app from "./config"    
+import {app,auth} from "./config"    
 
-export const auth = getAuth(app)
+
 const provider = new GoogleAuthProvider()
 let user=null
 export function returnUserInfo() {

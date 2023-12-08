@@ -1,5 +1,11 @@
 
 import { initializeApp } from "firebase/app";
+import {getAuth} from "firebase/auth"
+import { getFirestore,
+  collection,
+  addDoc,
+  serverTimestamp,
+  onSnapshot } from "firebase/firestore"
 
 
 const firebaseConfig = {
@@ -12,5 +18,33 @@ const firebaseConfig = {
 };
 
 
-const app = initializeApp(firebaseConfig);
-export default app;
+export const app = initializeApp(firebaseConfig)
+export const auth = getAuth(app)
+const db = getFirestore(app)
+const collectionName = "posts"
+
+
+export async function addPostToDB(postBody) {
+  console.log(auth.currentUser)
+  try {
+      const docRef = await addDoc(collection(db, collectionName), {
+          body: postBody,
+          uid: auth.currentUser.uid,
+          displayName: auth.currentUser.displayName,
+          createdAt: serverTimestamp(),
+      })
+      console.log("Document written with ID: ", docRef.id)
+  } catch (error) {
+      console.error(error.message)
+  }
+}
+
+// function fetchInRealtimeAndRenderPostsFromDB() {
+//   onSnapshot(collection(db, collectionName), (querySnapshot) => {
+//       clearAll(postsEl)
+      
+//       querySnapshot.forEach((doc) => {
+//           renderPost(postsEl, doc.data())
+//       })
+//   })
+// }
