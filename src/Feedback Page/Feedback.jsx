@@ -1,4 +1,4 @@
-import { addPostToDB } from "../Firebase Configaration/config";
+import { addPostToDB } from "../Firebase Configaration/FirestoreDB";
 import "./feedback.css"
 import { useState } from "react";
 
@@ -8,7 +8,7 @@ export default function Feedback() {
         setFeedback(event.target.value)
     }
     function postButtonPressed() {
-        addPostToDB(feedback)
+        addPostToDB(feedback,"feedback")
     }
     return (
         <>
