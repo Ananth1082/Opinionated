@@ -1,6 +1,6 @@
 import "./account.css"
 import Google from "../assets/google.jpg"
-import { authSignInWithGoogle,authSignInWithEmail, authCreateAccountWithEmail } from "../Firebase/authorization.js"
+import { authSignInWithGoogle,authSignInWithEmail, authCreateAccountWithEmail } from "../Firebase Configaration/authorization.js"
 import { useState } from "react"
 export default function Login() {
     const [FormData, setFormData] = useState({

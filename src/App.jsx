@@ -8,7 +8,7 @@ import Footer from "./Footer"
 import {Routes,Route} from "react-router-dom"
 import { useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "./firebase/authorization";
+import { auth } from "./Firebase Configaration/authorization";
 function App() {
   const [user, setUser] = useState(null);
   onAuthStateChanged(auth, (u) => {
