@@ -4,45 +4,47 @@ import { getAuth,
          signOut,
          onAuthStateChanged, 
          GoogleAuthProvider,
-         signInWithPopup } from "firebase/auth";
+         signInWithPopup, 
+         reload} from "firebase/auth";
 import app from "./config"    
 
-const auth = getAuth(app)
+export const auth = getAuth(app)
 const provider = new GoogleAuthProvider()
+let user=null
+export function returnUserInfo() {
+    return user
+}
 
 
 export function authSignInWithGoogle() {
     signInWithPopup(auth, provider)
         .then((result) => {
+            console.log(result.user);
             location.replace('/Home')
         }).catch((error) => {
-            console.error(error.message)
+            alert("Invalid email or password")
+            
         })
 }
 
-export function authSignInWithEmail() {
-    const email = emailInputEl.value
-    const password = passwordInputEl.value
-    
+export function authSignInWithEmail(email,password) {
+
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            clearAuthFields()
+            location.replace('/Home')
         })
         .catch((error) => {
-            console.error(error.message)
+            alert("Invalid email or password")
         })
 }
 
-export function authCreateAccountWithEmail() {
-    const email = emailInputEl.value
-    const password = passwordInputEl.value
-
+export function authCreateAccountWithEmail(email,password) {
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            clearAuthFields()
+            location.replace('/Home')
         })
         .catch((error) => {
-            console.error(error.message) 
+            alert("Error creating account")
         })
 }
 
@@ -54,3 +56,4 @@ export function authSignOut() {
             console.error(error.message)
         })
 }
+

@@ -2,7 +2,10 @@ import "./App.css";
 import Logo from "./assets/icons8-logo.svg";
 import { Link } from "react-router-dom";
 import { authSignOut } from "./Firebase/authorization.js";
-export default function Header() {
+
+
+export default function Header({user}) {  
+  
   return (
     <header>
       <div id="logo-container">
@@ -16,8 +19,10 @@ export default function Header() {
         <Link to="/Feedback" >Feedback</Link>
         
       </div>
-      <div id="profile-info">Profile-PlaceHolder</div>
-      <button onClick={authSignOut}>Sign Out</button>
+      <div id="profile-info">{user? user.displayName : ''}</div>
+      {user? <button onClick={authSignOut}>Sign Out</button>:null}
+      {!user? <button onClick={authSignOut}>Sign in</button>:null}
+      
     </header>
   );
 }

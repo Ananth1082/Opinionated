@@ -6,10 +6,22 @@ import Blog from "./Blog Page/Blog"
 import Login from "./Login Page/Login"
 import Footer from "./Footer"
 import {Routes,Route} from "react-router-dom"
+import { useState } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./firebase/authorization";
 function App() {
+  const [user, setUser] = useState(null);
+  onAuthStateChanged(auth, (u) => {
+    if (u) {
+      setUser(u)
+    } else {
+      
+    }
+})
+
   return (
     <>
-      <Header />
+      <Header user={user} />
       <Routes>
         <Route path="/" element={<Login/>} />
         <Route path="/Home" element={<Trending/>}/>
