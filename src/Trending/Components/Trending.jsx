@@ -12,7 +12,7 @@ export default function Trending() {
   }
   const TrendingElements = DB.map((item) => {
     return (
-      <div
+      <div key={item.id}
         onClick={() => focus(item.id)}
         className={"card" + (active === item.id ? " active" : "")}
         style={
@@ -21,9 +21,9 @@ export default function Trending() {
             : {}
         }
       >
-        <div class="row">
-          <div class="icon">{item.id}</div>
-          <div class="description">
+        <div className="row">
+          <div className="icon">{item.id}</div>
+          <div className="description">
             <h4>{item.title}</h4>
           </div>
         </div>
@@ -32,9 +32,9 @@ export default function Trending() {
   });
   return (
     <>
-      <div class="wrapper">
-        <h1>Trending</h1>
-        <div class="slider-container">{TrendingElements}</div>
+      <div className="wrapper">
+        <h1 style={{letterSpacing: "-0.15rem"}}>Trending</h1>
+        <div className="slider-container">{TrendingElements}</div>
       </div>
       <div className="wrapper">
         <Track title="Free to play"data={GamesDB}  />

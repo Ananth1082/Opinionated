@@ -9,7 +9,7 @@ export default function Track({title, data}) {
   const numberOfPages = Math.floor(dbSize/4)
   const dataELements = data.map((item) => {
     return (
-      <img src={item.thumbnail} 
+      <img key={item.id} src={item.thumbnail} 
       alt=""/>
     )
   })

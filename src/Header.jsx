@@ -1,6 +1,7 @@
 import "./App.css";
 import Logo from "./assets/icons8-logo.svg";
 import { Link } from "react-router-dom";
+import { authSignOut } from "./Firebase/authorization.js";
 export default function Header() {
   return (
     <header>
@@ -16,6 +17,7 @@ export default function Header() {
         
       </div>
       <div id="profile-info">Profile-PlaceHolder</div>
+      <button onClick={authSignOut}>Sign Out</button>
     </header>
   );
 }
