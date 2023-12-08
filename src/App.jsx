@@ -12,26 +12,30 @@ import { auth } from "./Firebase Configaration/Config"
 import Explore from "./Explore/Explore"
 import { db } from "./Firebase Configaration/Config"
 import { collection, onSnapshot } from "firebase/firestore"
-import { getDocs } from "firebase/firestore"
 
 function App() {
   const [user, setUser] = useState(null);
-  
-  // function fetchInRealtimeAndRenderPostsFromDB() {
-  //   onSnapshot(collection(db, "blogs"), (querySnapshot) => {
-  //       querySnapshot.forEach((doc) => {
-  //           setBlog([...blog,doc.data()])
-  //           console.log(blog)
-  //       })
-  //   })
- 
+  const [blogDB,setBlogDB]=useState([])
+
   onAuthStateChanged(auth, (u) => {
     if (u) {
       setUser(u)
+      fetchInRealtimeAndRenderPostsFromDB()
     } else {
       
     }
 })
+function fetchInRealtimeAndRenderPostsFromDB() {
+  onSnapshot(collection(db, "blog"), (querySnapshot) => {
+      setBlogDB([])
+      
+      querySnapshot.forEach((doc) => {
+          setBlogDB((prev)=>{
+              return [doc.data(),...prev]
+          })
+      })
+  })
+}
 
   return (
     <>
@@ -40,7 +44,7 @@ function App() {
         <Route path="/" element={<Login/>} />
         <Route path="/Home" element={<Trending/>}/>
         <Route path="/Blog" element={<Blog/>} />
-        <Route path="/Explore" element={<Explore/>} />
+        <Route path="/Explore" element={<Explore blogDB={blogDB}/>} />
         <Route path="/Feedback" element={<Feedback/>} />
         <Route path="/Test"  />
       </Routes>
