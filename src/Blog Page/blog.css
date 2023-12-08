@@ -18,3 +18,33 @@
     height: 10rem;
     font-size: 1rem;
 }
+.blog-right-container button {
+    background-color: var(--background-color);
+    color: var(--color-primary);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-left: 45%;
+}
+.action-button {
+    background-color: var(--background-color);
+    color: var(--color-primary);
+    border: none;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+#profile-info {
+    display: flex;
+    flex-direction: column;
+
+    margin-right: 1rem;
+}
+#profile-info h4 {
+    line-height: 10px;
+}

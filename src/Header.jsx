@@ -2,10 +2,9 @@ import "./App.css";
 import Logo from "./assets/icons8-logo.svg";
 import { Link } from "react-router-dom";
 import { authSignOut } from "./Firebase Configaration/authorization.js";
+import ExtractDPFromEmail from "./DB/ExtractDP.js";
 
-
-export default function Header({user}) {  
-  
+export default function Header({ user }) {
   return (
     <header>
       <div id="logo-container">
@@ -17,12 +16,13 @@ export default function Header({user}) {
         <Link to="/Blog" >Blog</Link>
         <Link to="/Explore" >Explore</Link>
         <Link to="/Feedback" >Feedback</Link>
-        
+
       </div>
-      <div id="profile-info">{user? user.displayName : ''}</div>
-      {user? <button onClick={authSignOut}>Sign Out</button>:null}
-      {!user? <button onClick={authSignOut}>Sign in</button>:null}
-      
+      <div id="profile-info"><h4>Username:{ user ? user.displayName || ExtractDPFromEmail(user.email) : ''}</h4>{user ? <button className="action-button" onClick={authSignOut}>Sign Out</button> : null}
+        {!user ? <button className="action-button" onClick={authSignOut}>Sign in</button> : null} </div>
+      <br />
+
+
     </header>
   );
 }
