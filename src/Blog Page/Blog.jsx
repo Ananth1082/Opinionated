@@ -19,11 +19,11 @@ export default function Blog() {
                             <div className="blog-right-top-right">
                                 <div className="blog-right-top-right-container">
                                     <div className="blog-right-top-right-container-left">
-                                        <i class="fas fa-user"></i>
+                                        <i className="fas fa-user"></i>
                                         <p>Admin</p>
                                     </div>
                                     <div className="blog-right-top-right-container-right">
-                                        <i class="fas fa-comments"></i>
+                                        <i className="fas fa-comments"></i>
                                         <p>3 Comments</p>
                                     </div>
                                 </div>
