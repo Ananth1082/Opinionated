@@ -1,6 +1,24 @@
 import "./blog.css"
+import { useState } from "react";
+import { addPostToDB } from "../Firebase Configaration/FirestoreDB"
+
 
 export default function Blog() {
+    const [blog, setBlog] = useState({
+        title: "",
+        content: ""
+    })
+    function postButtonPressed() {
+        addPostToDB(blog,"blog")
+    }
+    function handleInputChange(event) {
+        setBlog(prevBlog => {
+            return {
+                ...prevBlog,
+                [event.target.name]: event.target.value
+            }
+        })
+    }
     return (
         <div className="blog">
             <div className="blog-container">
@@ -13,17 +31,15 @@ export default function Blog() {
                     <div className="blog-right-container">
                         <div className="blog-right-top">
                             <div className="blog-right-top-left">
-                                <input className="blog-input-title" type="text" placeholder="Enter Blog Title"/>
+                                <input className="blog-input-title" name="title" value={blog.title} type="text" placeholder="Enter Blog Title" onChange={handleInputChange}/>
                                 <p>Posted on <span>March 10, 2021</span></p>
                             </div>
                             <div className="blog-right-top-right">
                                 <div className="blog-right-top-right-container">
                                     <div className="blog-right-top-right-container-left">
-                                        <i className="fas fa-user"></i>
                                         <p>Admin</p>
                                     </div>
                                     <div className="blog-right-top-right-container-right">
-                                        <i className="fas fa-comments"></i>
                                         <p>3 Comments</p>
                                     </div>
                                 </div>
@@ -31,11 +47,13 @@ export default function Blog() {
                         </div>
                         
                         <div className="blog-right-bottom">
-                            <textarea name="" id="blog-content" placeholder="Write your blog"></textarea>
+                            <textarea value={blog.content} name="content" id="blog-content" placeholder="Write your blog" onChange={handleInputChange}></textarea>
                         </div>
                         </div>
                         </div>
+                        <button onClick={postButtonPressed}>Submit</button>
                         </div>
+                        
                         </div>
                         )
 }

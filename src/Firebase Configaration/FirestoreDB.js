@@ -11,7 +11,7 @@ export async function addPostToDB(postBody,collectionName) {
           displayName: auth.currentUser.displayName,
           createdAt: serverTimestamp(),
       })
-      console.log("Document written with ID: ", docRef.id)
+    
   } catch (error) {
       console.error(error.message)
   }

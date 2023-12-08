@@ -3,7 +3,8 @@
     padding: 2rem;
     display: flex;
     gap: 2rem;
-    margin: 1rem auto; 
+    height:100%;
+    margin:  3.15rem auto;
 }
 .blog-input-title {
     width: 50%;
