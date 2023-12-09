@@ -30,6 +30,7 @@ function fetchInRealtimeAndRenderPostsFromDB() {
       setBlogDB([])
       
       querySnapshot.forEach((doc) => {
+        // console.log(doc.data());
           setBlogDB((prev)=>{
               return [doc.data(),...prev]
           })

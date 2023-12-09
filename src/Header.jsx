@@ -2,7 +2,7 @@ import "./App.css";
 import Logo from "./assets/icons8-logo.svg";
 import { Link } from "react-router-dom";
 import { authSignOut } from "./Firebase Configaration/authorization.js";
-import ExtractDPFromEmail from "./DB/ExtractDP.js";
+import ExtractDPFromEmail from "./Helper/ExtractDP.js";
 
 export default function Header({ user }) {
   return (

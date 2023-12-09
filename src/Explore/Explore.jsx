@@ -1,9 +1,10 @@
 import "./explore.css"
 import Blog from "./Blog"
+import getDate from "../Helper/GetDate.js"
 export default function Explore({blogDB}) {
     
     const blogElements=blogDB.map((blog)=>{
-        return <Blog name={blog.displayName} title={blog.body.title} time={"12 sept 2023"} content={blog.body.content} />
+        return <Blog name={blog.displayName} title={blog.body.title} time={getDate(blog.createdAt)} content={blog.body.content} />
     })
   
     
