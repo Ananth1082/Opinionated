@@ -9,6 +9,7 @@ export default function Feedback() {
     }
     function postButtonPressed() {
         addPostToDB(feedback,"feedback")
+        setFeedback("")
     }
     return (
         <>

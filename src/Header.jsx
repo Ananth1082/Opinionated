@@ -18,7 +18,7 @@ export default function Header({ user }) {
         <Link to="/Feedback" >Feedback</Link>
 
       </div>
-      <div id="profile-info"><h4>Username:{ user ? user.displayName || ExtractDPFromEmail(user.email) : ''}</h4>{user ? <button className="action-button" onClick={authSignOut}>Sign Out</button> : null}
+      <div id="profile-info"><h4>{ user ? "Username: "+user.displayName || "Username: "+ExtractDPFromEmail(user.email) : ''}</h4>{user ? <button className="action-button" onClick={authSignOut}>Sign Out</button> : null}
         {!user ? <button className="action-button" onClick={authSignOut}>Sign in</button> : null} </div>
       <br />
 
