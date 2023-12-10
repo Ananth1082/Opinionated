@@ -35,15 +35,15 @@ export default function Blog() {
                     <div className="blog-right-top">
                         <div className="blog-right-top-left">
                             <input className="blog-input-title" name="title" value={blog.title} type="text" placeholder="Enter Blog Title" onChange={handleInputChange} />
-                            <p>Posted on <span>March 10, 2021</span></p>
+                            <p>Posted on <span>-- Date --</span></p>
                         </div>
                         <div className="blog-right-top-right">
                             <div className="blog-right-top-right-container">
                                 <div className="blog-right-top-right-container-left">
-                                    <p>Admin</p>
+                                    <p>-- Rank --</p>
                                 </div>
                                 <div className="blog-right-top-right-container-right">
-                                    <p>3 Comments</p>
+                                    <p>-- Comments --</p>
                                 </div>
                             </div>
                         </div>

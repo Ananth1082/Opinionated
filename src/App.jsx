@@ -12,6 +12,7 @@ import { auth } from "./Firebase Configaration/Config"
 import Explore from "./Explore/Explore"
 import { db } from "./Firebase Configaration/Config"
 import { collection, onSnapshot } from "firebase/firestore"
+import Profile from "./Profile/Profile";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -30,7 +31,6 @@ function fetchInRealtimeAndRenderPostsFromDB() {
       setBlogDB([])
       
       querySnapshot.forEach((doc) => {
-        // console.log(doc.data());
           setBlogDB((prev)=>{
               return [doc.data(),...prev]
           })
@@ -47,7 +47,7 @@ function fetchInRealtimeAndRenderPostsFromDB() {
         <Route path="/Blog" element={<Blog/>} />
         <Route path="/Explore" element={<Explore blogDB={blogDB}/>} />
         <Route path="/Feedback" element={<Feedback/>} />
-        <Route path="/Test"  />
+        <Route path="/Profile" element={<Profile data={user} />}  />
       </Routes>
       <br />
       <Footer />
